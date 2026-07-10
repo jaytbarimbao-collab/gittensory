@@ -8900,6 +8900,16 @@
             "type": "number",
             "nullable": true
           },
+          "aiReviewLowConfidenceDisposition": {
+            "type": "string",
+            "nullable": true,
+            "enum": [
+              "one_shot",
+              "hold_for_review",
+              "advisory_only",
+              null
+            ]
+          },
           "aiReviewCombine": {
             "type": "string",
             "nullable": true,
@@ -9328,6 +9338,9 @@
           "agentDryRun": {
             "type": "boolean"
           },
+          "agentGlobalFreezeOverride": {
+            "type": "boolean"
+          },
           "contributorOpenPrCap": {
             "type": "integer",
             "nullable": true,
@@ -9469,6 +9482,14 @@
           "moderationBannedLabel": {
             "type": "string"
           },
+          "skipAutomationBotAuthors": {
+            "type": "string",
+            "enum": [
+              "inherit",
+              "off",
+              "enabled"
+            ]
+          },
           "reviewEvasionProtection": {
             "type": "string",
             "enum": [
@@ -9516,9 +9537,6 @@
                   "advisory"
                 ]
               },
-              "message": {
-                "type": "string"
-              },
               "requireViewports": {
                 "type": "array",
                 "items": {
@@ -9530,6 +9548,9 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "message": {
+                "type": "string"
               },
               "skillFileUrl": {
                 "type": "string"
@@ -9551,19 +9572,6 @@
           "updatedAt": {
             "type": "string",
             "nullable": true
-          },
-          "agentGlobalFreezeOverride": {
-            "type": "boolean"
-          },
-          "aiReviewLowConfidenceDisposition": {
-            "type": "string",
-            "nullable": true,
-            "enum": [
-              "one_shot",
-              "hold_for_review",
-              "advisory_only",
-              null
-            ]
           }
         },
         "required": [
